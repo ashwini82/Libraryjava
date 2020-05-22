@@ -1,12 +1,12 @@
 package oopLibrary;
 
-public class Book extends LibraryItem {
+public class Book extends LibraryItem implements Reservable, Loanable {
 
-    private String author;
+    private Author author;
     private String genre;
 
     // constructor//
-    public Book(int itemId, String itemName, String itemType, boolean availability, double pageCount, String author,
+    public Book(int itemId, String itemName, String itemType, boolean availability, double pageCount, Author author,
             String genre) {
 
         super(itemId, itemName, itemType, availability, pageCount);
@@ -15,16 +15,17 @@ public class Book extends LibraryItem {
     }
 
     // getter//
-    public String getAuthor() {
-        return author;
-    }
 
     public String getGenre() {
         return genre;
     }
 
+    public Author getAuthor() {
+        return author;
+    }
+
     // setter//
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
@@ -34,6 +35,18 @@ public class Book extends LibraryItem {
 
     @Override
     public String toString() {
-        return this.getItemName() + " " + this.getItemType() + " " + this.getAvailability() + " " + this.getGenre();
+        return this.getItemName() + " " + this.getItemType() + " " + this.getAvailability() + " " + this.getAuthor()
+                + " " + this.getGenre();
+    }
+
+    // Implement//
+    @Override
+    public boolean isReservable() {
+        return true;
+    }
+
+    @Override
+    public boolean isLoanable() {
+        return true;
     }
 }

@@ -1,20 +1,27 @@
 package oopLibrary;
 
 public class Periodical extends LibraryItem {
-    private String publisher;
+    private PublishingCompany publisher;
 
     public Periodical(int itemId, String itemName, String itemType, boolean availability, double pageCount,
-            String publisher) {
+            PublishingCompany publisher) {
         super(itemId, itemName, itemType, availability, pageCount);
         this.publisher = publisher;
     }
 
     // getter//
-    public String getPublisher() {
+    public PublishingCompany getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(String publisher) {
+    public void setPublisher(PublishingCompany publisher) {
         this.publisher = publisher;
     }
+
+    @Override
+    public String toString() {
+        return this.getItemName() + " " + this.getItemType() + " " + this.getAvailability() + " " + +this.getPageCount()
+                + " " + this.getPublisher();
+    }
+
 }

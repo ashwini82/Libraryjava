@@ -8,6 +8,9 @@ public class CardHolder extends Person {
     private Date checkOut;
     private boolean holdItems;
 
+    OverdueList<Book> list1 = new OverdueList<>();
+    OverdueList<Periodical> list2 = new OverdueList<>();
+
     // constructor//
     public CardHolder(String firstName, String lastName, int personId, Date joinDate, Date checkIn, Date checkOut,
             boolean holdItems) {
@@ -43,4 +46,29 @@ public class CardHolder extends Person {
     public void setHoldItems(boolean holdItems) {
         this.holdItems = holdItems;
     }
+
+    public void addOverDueBook(Book item) {
+        list1.addOverdueItems(item);
+    }
+
+    public void removeOverDueBook(Book item) {
+        list1.removeOverdueItems(item);
+    }
+
+    public void addOverDueBook(Periodical item) {
+        list2.addOverdueItems(item);
+    }
+
+    public void removeOverDueBook(Periodical item) {
+        list2.removeOverdueItems(item);
+    }
+
+    public void printPeriodicals() {
+        list2.printOverDueList();
+    }
+
+    public void printBooks() {
+        list1.printOverDueList();
+    }
+
 }

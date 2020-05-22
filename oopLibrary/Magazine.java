@@ -5,7 +5,7 @@ public class Magazine extends Periodical {
     private String publishDuration;
 
     public Magazine(int itemId, String itemName, String itemType, boolean availability, double pageCount,
-            String publisher, String publishDuration) {
+            PublishingCompany publisher, String publishDuration) {
 
         super(itemId, itemName, itemType, availability, pageCount, publisher);
 

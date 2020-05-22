@@ -3,7 +3,7 @@ package oopLibrary;
 public class GeneralBook extends Book {
 
     public GeneralBook(int itemId, String itemName, String itemType, boolean availability, double pageCount,
-            String author, String genre) {
+            Author author, String genre) {
         super(itemId, itemName, itemType, availability, pageCount, author, genre);
 
     }
